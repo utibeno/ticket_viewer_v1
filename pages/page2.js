@@ -3,9 +3,10 @@ import styles from '../styles/Home.module.css';
 import Ticket from '../components/Ticket';
 import Link from 'next/link'
 
+
 // var url = "https://zccticketshelp.zendesk.com/api/v2/tickets.json?page[size]=25";
 
-export default function Home({ tickets }) {
+export default function Page2({ tickets }) {
 
   console.log(tickets[0].subject);
   // ticket_list = [];
@@ -44,10 +45,13 @@ export default function Home({ tickets }) {
           />
         ))}
 
-          <Link href="/page2">
-            <a className={styles.a}>Next</a>
-          </Link>
+        <Link href="/">
+          <a className={styles.a}>Previous</a>
+        </Link>
 
+  <Link href="/page3">
+    <a className={styles.a}>Next</a>
+  </Link>
         {/* <button onClick={handleClick} disabled={!url}>PREV</button>
         <button onClick={getNextData()}>NEXT</button> */}
       </main>
@@ -58,7 +62,7 @@ export default function Home({ tickets }) {
 
 export const getStaticProps = async (context) => {
 
-  const url = `https://zccticketshelp.zendesk.com/api/v2/tickets.json?page=1&per_page=25`
+  const url = `https://zccticketshelp.zendesk.com/api/v2/tickets.json?page=2&per_page=25`
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "text/plain");
