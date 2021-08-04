@@ -2,24 +2,12 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Ticket from '../components/Ticket';
 import Link from 'next/link'
+import Error from './_error'
 
-// var url = "https://zccticketshelp.zendesk.com/api/v2/tickets.json?page[size]=25";
 
 export default function Page3({ tickets }) {
 
   console.log(tickets[0].subject);
-  // ticket_list = [];
-  // while (tickets) {
-  //   per_page = [];
-  //   num_tickets = 0
-  //   count = 0;
-  //   while (count != 25) {
-  //     per_page.push(tickets[count]);
-  //     count++;
-  //   }
-  //   num_tickets += count;
-  //   ticket_list.push(per_page);
-  // }
 
   return (
     <div className={styles.container}>
@@ -52,15 +40,13 @@ export default function Page3({ tickets }) {
     <a className={styles.a}>Next</a>
   </Link>
 
-        {/* <button onClick={handleClick} disabled={!url}>PREV</button>
-        <button onClick={getNextData()}>NEXT</button> */}
       </main>
     </div>
   )
 }
 
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async () => {
 
   const url = `https://zccticketshelp.zendesk.com/api/v2/tickets.json?page=3&per_page=25`
 
@@ -94,4 +80,3 @@ export const getStaticProps = async (context) => {
        }
     }
   }
-// }
