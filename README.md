@@ -3,7 +3,7 @@ To get started make sure to have Node.js installed
 git clone into the repo
 You can use any text editor you choose, VScode is recommended
 
-Open your terminal
+Open your terminal and
 cd into the folder in which you cloned the repo into
 
 Once in the folder:
